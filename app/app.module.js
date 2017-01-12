@@ -5,6 +5,9 @@ angular.module('inboxApp', [
     'ngMaterial',
     'angularCSS',
     'ngRoute',
+    'LocalStorageModule',
+    'services',
     'emailList',
-    'inbox'
+    'inbox',
+    'dashboardToolbar'
     ]);

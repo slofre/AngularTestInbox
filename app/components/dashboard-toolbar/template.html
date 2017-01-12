@@ -1,0 +1,21 @@
+<md-toolbar class="header-purple">
+        <div class="md-toolbar-tools">
+            <md-menu>
+                <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button">
+                    <md-icon md-font-library="material-icons">menu</md-icon>
+                </md-button>
+                <md-menu-content>
+                    <md-menu-item>
+                        <md-button ng-click="doSomething()">
+                            <md-icon md-font-library="material-icons">email</md-icon>
+                            Inbox
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <span>Angular Inbox </span>
+            <span flex></span>          
+            <div ng-show="!$ctrl.isSignedIn" id="my-signin2"></div>
+            <span>{{$ctrl.isSignedIn}}</span>
+        </div>
+    </md-toolbar>
