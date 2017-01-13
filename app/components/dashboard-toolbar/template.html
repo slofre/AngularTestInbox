@@ -16,6 +16,6 @@
             <span>Angular Inbox </span>
             <span flex></span>          
             <div ng-show="!$ctrl.isSignedIn" id="my-signin2"></div>
-            <span>{{$ctrl.isSignedIn}}</span>
+            <md-button ng-show="$ctrl.isSignedIn" ng-click="$ctrl.signOut()">Log out</button>           
         </div>
     </md-toolbar>

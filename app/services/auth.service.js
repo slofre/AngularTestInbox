@@ -3,12 +3,12 @@
 function AuthService ($q,localStorageService) {
   
     var Service = {};    
-    
+    Service.googleUser = undefined;
 
     gapi.load('client:auth2', function () {      
         gapi.auth2.init({
                 'client_id': '224142087500-heth8sfkjet3tqqmajcscsfalhhivgs0.apps.googleusercontent.com',
-                'scope': 'profile email',
+                'scope': 'profile email https://www.googleapis.com/auth/gmail.readonly',
                 'cookie_policy': 'none'
             });    
         }); 
@@ -22,6 +22,7 @@ function AuthService ($q,localStorageService) {
         'theme': 'dark',
         'onsuccess': function(googleUser){ 
             localStorageService.set('token', googleUser.getAuthResponse().id_token);
+            Service.googleUser = googleUser;
             onSuccess();
             },
         'onfailure': onFailure

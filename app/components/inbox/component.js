@@ -1,7 +1,7 @@
 'use strict';
 
-function InboxController() {
-    var self = this;
+function InboxController($scope,AuthService) {
+    var self = this;    
 }
 
 angular.module('inbox').component(
@@ -9,6 +9,6 @@ angular.module('inbox').component(
     {   
         css: '../../css/inbox.css',   
         templateUrl: 'components/inbox/template.html',
-        controller: [InboxController]
+        controller: ['$scope','AuthService', InboxController]
     }
 );

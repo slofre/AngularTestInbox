@@ -1,26 +1,15 @@
 'use strict';
 
-function EmailListController() {
+function EmailListController($scope, GmailService) {
     var self = this;
+    self.scope = $scope;
 
-    self.emails = [
-        {
-            icon: 'http://i.imgur.com/1Jvj0bU.jpg',
-            title: 'Good morning',
-            message: 'Some long description Some long description Some long description Some long description Some long description Some long descriptionSome long descriptionSome long description',
-            date: '1288323623006'
-        }, {
-            icon: 'http://i.imgur.com/1Jvj0bU.jpg',
-            title: 'Good morning',
-            message: 'Some long description Some long description Some long description Some long description Some long description Some long descriptionSome long descriptionSome long description',
-            date: '1288323623006'
-        }, {
-            icon: 'http://i.imgur.com/1Jvj0bU.jpg',
-            title: 'Good morning',
-            message: 'Some long description Some long description Some long description Some long description Some long description Some long descriptionSome long descriptionSome long description',
-            date: '1288323623006'
-        }
-      ];
+    self.emails = setTimeout(
+        function(){
+            GmailService.getEmails().then(function(data){
+                self.emails = data;
+            });
+        },2000);
 }
 
 angular.module('emailList').component(
@@ -28,6 +17,6 @@ angular.module('emailList').component(
     {      
         css: '../../css/email-list.css',  
         templateUrl: 'components/email-list/template.html',
-        controller: [EmailListController]
+        controller: ['$scope','GmailService',EmailListController]
     }
 );

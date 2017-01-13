@@ -31,17 +31,12 @@ function DashboardToolbarController($scope,AuthService) {
       }
 
       AuthService.signOut(onSuccess,onFailure);     
-    }
-
-    setTimeout(self.signOut, 5000);
+    }   
 };
 
 angular.module('dashboardToolbar').component(
     'dashboardToolbar',
-    {    
-        bindings: {          
-          signOut:"&"         
-        },   
+    {     
         css: '../../css/main.css',  
         templateUrl: 'components/dashboard-toolbar/template.html',
         controller: ['$scope','AuthService', DashboardToolbarController]
