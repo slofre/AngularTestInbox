@@ -10,6 +10,10 @@ function EmailListController($scope, GmailService) {
                 self.emails = data;
             });
         },2000);
+    
+    self.getEmail = function(id){
+        var test = id;
+    }
 }
 
 angular.module('emailList').component(

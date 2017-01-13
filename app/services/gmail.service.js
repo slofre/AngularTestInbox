@@ -69,7 +69,8 @@ function GmailService ($q, AuthService) {
                     emails.push({
                         snippet: data[i].result.snippet,
                         subject: subject[0] ? subject[0].value : "Empty",
-                        date: date[0] ? date[0].value : "Empty"
+                        date: date[0] ? date[0].value : "Empty",
+                        id: data[i].result.id
                     });
                 }
 

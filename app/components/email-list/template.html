@@ -1,14 +1,15 @@
 <md-content flex>
     <md-list>
-      <md-list-item class="md-3-line message" ng-repeat="email in $ctrl.emails">
-        <img src='http://i.imgur.com/1Jvj0bU.jpg' alt="" class="md-avatar">
-        <div class="md-list-item-text">
-            <span class="message-text">
-                <strong>{{ email.subject }}</strong>
-                {{ email.snippet }}
-            </span>
-        </div>
-        <md-divider inset></md-divider>
+      <md-list-item class="md-3-line message" ng-repeat="email in $ctrl.emails" ng-click="$ctrl.getEmail(email.id)" >       
+            <img src='http://i.imgur.com/1Jvj0bU.jpg' alt="" class="md-avatar">
+            <div class="md-list-item-text">
+                <span class="message-text">
+                    <strong>{{ email.subject }}</strong>
+                    {{ email.snippet }}
+                </span>
+            </div>
+            <md-divider inset></md-divider>
+              
       </md-list-item>
     </md-list>
   </md-content>
